@@ -21,7 +21,7 @@ const CardResident = ({ url }) => {
  
   return (
     <article className="resident">
-        <header className="resident__front">
+        <header className="resident__box">
             <img className="resident__img" src={ resident?.image } alt="" />
             <div className="resident__status-box">
                 <div className="circle" style={{backgroundColor: bgStatus()}}></div>

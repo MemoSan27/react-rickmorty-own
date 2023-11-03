@@ -160,7 +160,7 @@ img{
 .resident{
   position: relative;
 }
-.resident__front{
+.resident__box{
   color: white;
   text-align: center;
 }
