@@ -33,9 +33,10 @@ const CardResident = ({ url }) => {
         </header>
         <section className="resident__info back face back">
           <ul className="back__bg">
-                <li><span>Specie: </span> <br /> <span className="back__span"> { resident?.species } </span></li>
-                <li><span>Origin:  </span> <br /> <span className="back__span"> { resident?.origin.name } </span></li>
-                <li><span>Episodes: </span> <br /> <span className="back__span"> { resident?.episode.length } </span></li>
+                <li> <i class='radiation bx bxs-radiation'></i> </li>
+                <li><span className="back__tit">Specie: </span> <br /> <span className="back__span"> { resident?.species } </span></li>
+                <li><span className="back__tit">Origin:  </span> <br /> <span className="back__span"> { resident?.origin.name } </span></li>
+                <li><span className="back__tit">Episodes: </span> <br /> <span className="back__span"> { resident?.episode.length } </span></li>
           </ul>
         </section> 
     </article>

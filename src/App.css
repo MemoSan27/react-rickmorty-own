@@ -13,7 +13,7 @@
 }
 html{
   font-family: var(--mainFont);
-  font-size: 62.5%; 
+  font-size: 55.5%; 
 }
 body{
   margin: 0;
@@ -187,6 +187,7 @@ img{
 }
 .resident__status{
   color: white;
+  font-size: 1.5rem;
 }
 .circle{
   width: 2rem;
@@ -202,11 +203,11 @@ img{
   gap: 1rem;
   align-items: center;
   background-color: black;
-  width: 40%;
+  width: 35%;
   padding: 1rem;
   border-radius: 0 5rem 5rem 0;
   position: absolute;
-  top: 10%;
+  top: 12.5%;
 }
 .face{
   position: absolute;
@@ -224,7 +225,7 @@ img{
   transition: 1s ease;
 }
 .back{
-  background-color: var(--secondBg);
+  box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.68) inset;
   padding: 5rem;
   border-radius: 5rem 5rem 3rem 3rem;
   transform: perspective(600px) rotateY(180deg);
@@ -239,7 +240,7 @@ img{
   border-radius: 5rem 5rem 5rem 5rem;
   height: 100%;
   gap: 1.5rem;
-  box-shadow: 1px 3px 26px 13px rgba(0,0,0,0.68) inset;
+  
   padding: 2rem;
   text-align: center;
   color: rgba(240,240,45,0.8);
@@ -249,10 +250,16 @@ img{
   font-weight: 400;
   color: rgba(240,240,45,0.5);
 }
+.back__tit{
+  font-size: 2.8rem;
+}
 .resident:hover .front{
   transform: rotateY(180deg);
 }
 
 .resident:hover .back{
   transform: rotateY(360deg);
+}
+.radiation{
+  font-size: 8rem;
 }
