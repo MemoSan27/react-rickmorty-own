@@ -192,7 +192,7 @@ img{
 .resident__img{
   border-radius: 5rem 5rem 0 0; 
 }
-.resident__box{
+.resident__status-box{
   margin-top: 1rem;
   display: flex;
   gap: 1rem;

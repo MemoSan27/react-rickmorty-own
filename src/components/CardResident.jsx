@@ -23,7 +23,7 @@ const CardResident = ({ url }) => {
     <article className="resident">
         <header className="resident__front">
             <img className="resident__img" src={ resident?.image } alt="" />
-            <div className="resident__box">
+            <div className="resident__status-box">
                 <div className="circle" style={{backgroundColor: bgStatus()}}></div>
                 <span className="resident__status"> { resident?.status } </span>
             </div>
