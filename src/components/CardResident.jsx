@@ -21,7 +21,7 @@ const CardResident = ({ url }) => {
  
   return (
     <article className="resident">
-        <header className="resident__box">
+        <header className="resident__box front">
             <img className="resident__img" src={ resident?.image } alt="" />
             <div className="resident__status-box">
                 <div className="circle" style={{backgroundColor: bgStatus()}}></div>
@@ -31,15 +31,13 @@ const CardResident = ({ url }) => {
               <h3 className="resident__name"> { resident?.name } </h3>
             </div>
         </header>
-        {/* <section className="resident__info">
-            
-            
-            <ul>
-                <li><span>Specie: </span><span> { resident?.species } </span></li>
-                <li><span>Origin:  </span><span> { resident?.origin.name } </span></li>
-                <li><span>Episodes where appear: </span><span> { resident?.episode.length } </span></li>
-            </ul>
-        </section> */}
+        <section className="resident__info back face back">
+          <ul className="back__bg">
+                <li><span>Specie: </span> <br /> <span className="back__span"> { resident?.species } </span></li>
+                <li><span>Origin:  </span> <br /> <span className="back__span"> { resident?.origin.name } </span></li>
+                <li><span>Episodes: </span> <br /> <span className="back__span"> { resident?.episode.length } </span></li>
+          </ul>
+        </section> 
     </article>
   )
 }
