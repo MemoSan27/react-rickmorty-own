@@ -38,7 +38,7 @@ const Main = () => {
 
   const handleLocation = (e) => {
     e.preventDefault();
-    setLocationId(inputLocation.current.value.trim());
+    setLocationId(inputLocation.current.value);
     inputLocation.current.value = '';
   }
 
@@ -89,7 +89,7 @@ const Main = () => {
 
   const inputProps = {
     value: value,
-    onChange: onChange
+    onChange: onChange,
   };
 
   
@@ -100,15 +100,16 @@ const Main = () => {
           <div className='formBg'>
             <form className='form' onSubmit={handleLocation}>
                 
-                {/* <Autosuggest 
+                <Autosuggest 
+                  ref={inputLocation}
                   suggestions={locationNames}
                   onSuggestionsFetchRequested={onSuggestionsFetchRequested}
                   onSuggestionsClearRequested={onSuggestionsClearRequested}
                   getSuggestionValue={getSuggestionValue}
                   renderSuggestion={renderSuggestion}
                   inputProps={inputProps}
-                /> */}
-                <input className='form__input' ref={inputLocation} type='text' required/>
+                />
+                
                 <button className='form__btn'>Search</button>
             </form>
           </div>
