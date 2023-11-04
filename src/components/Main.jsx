@@ -5,9 +5,13 @@ import CardLocation from '../components/CardLocation';
 import CardResident from '../components/CardResident';
 import Loading from './Loading';
 import ubicate from '../locations.json';
+import Autosuggest from 'react-autosuggest';
 
 const Main = () => {
 
+  const [ locationNames, setLocationNames ] = useState(ubicate);
+  const [ value, setValue ] = useState("");
+  const [ locationSelected, setLocationSelected ] = useState({})
   const [ locationId, setLocationId ] = useState(getRandom());
   const url = `https://rickandmortyapi.com/api/location/${locationId}`;
   const [ location, getLocation, isLoading, hasError ] = useFetch(url);
@@ -38,6 +42,56 @@ const Main = () => {
     inputLocation.current.value = '';
   }
 
+ 
+
+  const onSuggestionsFetchRequested = ({ value }) => {
+      setLocationNames(locationNamesFilter(value));
+  }
+
+  const locationNamesFilter = (value) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+    let filtrado = ubicate.filter((item) => {
+      let textoCompleto = `${item.id} - ${item.name}`;
+
+      if(textoCompleto.toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .includes(inputValue)){
+          return item;
+        }
+    });
+    
+    return inputLength === 0 ? [] : filtrado;
+  }
+
+  const onSuggestionsClearRequested = () => {
+    setLocationNames([]);
+  }
+
+  const getSuggestionValue = (suggestion) => {
+    return `${ suggestion.id } - ${ suggestion.name }`;
+  }
+  
+  const renderSuggestion = (suggestion) => (
+    <div className='sugerencia' onClick={ () => selectLocationName(suggestion) }>
+      { `${ suggestion.id } - ${ suggestion.name }` }
+    </div>
+  );
+
+  const selectLocationName = (locationName) => {
+    setLocationSelected(locationName);
+  }
+
+  const onChange = (e, {newValue}) => {
+    setValue(newValue);
+  }
+
+  const inputProps = {
+    value: value,
+    onChange: onChange
+  };
+
   
 
   return (
@@ -46,6 +100,14 @@ const Main = () => {
           <div className='formBg'>
             <form className='form' onSubmit={handleLocation}>
                 
+                {/* <Autosuggest 
+                  suggestions={locationNames}
+                  onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                  onSuggestionsClearRequested={onSuggestionsClearRequested}
+                  getSuggestionValue={getSuggestionValue}
+                  renderSuggestion={renderSuggestion}
+                  inputProps={inputProps}
+                /> */}
                 <input className='form__input' ref={inputLocation} type='text' required/>
                 <button className='form__btn'>Search</button>
             </form>
