@@ -13,7 +13,7 @@
 }
 html{
   font-family: var(--mainFont);
-  font-size: 55.5%; 
+  font-size: 50.5%; 
 }
 body{
   margin: 0;
@@ -107,12 +107,13 @@ img{
   padding: 2rem;
 }
 .card-location__title{
+  color: rgba(240,240,45,0.5);
   font-size: 2rem;
   margin-bottom: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 900;
 }
-@media ( min-width: 768px ) { 
+@media ( min-width: 600px ) { 
   .card-location__title{
     font-size: 3.5rem;
   }
@@ -127,7 +128,7 @@ img{
   flex-direction: column;
   font-size: 1rem;
 }
-@media ( min-width: 768px ) { 
+@media ( min-width: 600px ) { 
   .card-location__item{
     font-size: 2rem;
   }
@@ -144,14 +145,14 @@ img{
   flex-direction: column;
   gap: 5rem;
 }
-@media ( min-width: 768px ) { 
+@media ( min-width: 600px ) { 
   .cards-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
 }
-@media ( min-width: 992px ) { 
+@media ( min-width: 800px ) { 
   .cards-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -177,7 +178,7 @@ img{
 .resident__name{
   font-size: 2rem;
 }
-@media ( min-width: 768px ) { 
+@media ( min-width: 600px ) { 
   .resident__name{
     font-size: 2.5  rem;
   }
@@ -240,7 +241,6 @@ img{
   border-radius: 5rem 5rem 5rem 5rem;
   height: 100%;
   gap: 1.5rem;
-  
   padding: 2rem;
   text-align: center;
   color: rgba(240,240,45,0.8);

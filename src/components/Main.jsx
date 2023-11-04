@@ -19,6 +19,7 @@ const Main = () => {
   const handleLocation = (e) => {
     e.preventDefault();
     setLocationId(inputLocation.current.value.trim());
+    inputLocation.current.value = '';
   }
 
   return (
@@ -27,7 +28,7 @@ const Main = () => {
           <div className='formBg'>
             <form className='form' onSubmit={handleLocation}>
                 
-                <input className='form__input' ref={inputLocation} type='text' />
+                <input className='form__input' ref={inputLocation} type='text' required/>
                 <button className='form__btn'>Search</button>
             </form>
           </div>
