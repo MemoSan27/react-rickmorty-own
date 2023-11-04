@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@font-face {
+  font-family: 'Rick and Morty';
+  src: url('../get_schwifty.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
 /***** RESET  *******/
 :root{
   --mainFont: 'Lato', sans-serif;
   --mainBg: #05292e;
   --secondBg: #01171a;
+  --thirdBg: rgba(240,240,45,0.8);
   --inputBg: #e3fae1;
   --formBg: #049696;
 
@@ -86,6 +93,7 @@ img{
   background-color: var(--inputBg);
   padding: 1rem 2rem;
   outline: none;
+  font-family: 'Rick and Morty';
 }
 .form__btn{
   width: 25%;
@@ -95,6 +103,7 @@ img{
   color: white;
   text-transform: uppercase;
   padding: 1rem 0;
+  font-family: 'Rick and Morty';
   
 }
 .card-location{
@@ -112,6 +121,7 @@ img{
   margin-bottom: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 900;
+  font-family: 'Rick and Morty';
 }
 @media ( min-width: 600px ) { 
   .card-location__title{
@@ -174,6 +184,8 @@ img{
   background-color: var(--secondBg);
   padding: 2rem 0;
   border-radius: 0 0 3rem 3rem; 
+  font-family: 'Rick and Morty';
+  color: var(--thirdBg);
 }
 .resident__name{
   font-size: 2rem;
@@ -243,12 +255,13 @@ img{
   gap: 1.5rem;
   padding: 2rem;
   text-align: center;
-  color: rgba(240,240,45,0.8);
+  color: var(--thirdBg);
   font-weight: 900;
 }
 .back__span{
   font-weight: 400;
   color: rgba(240,240,45,0.5);
+  font-family: 'Rick and Morty';
 }
 .back__tit{
   font-size: 2.8rem;
@@ -262,4 +275,28 @@ img{
 }
 .radiation{
   font-size: 8rem;
+}
+.loading{
+  margin-top: 15rem;
+  opacity: 0.8;
+}
+.error{
+  background-color: var(--thirdBg);
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+  animation: showError 1s ease-in;
+  border: 3px solid rgba(240,240,45,0.9);
+  font-family: 'Rick and Morty';
+}
+@keyframes showError {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
