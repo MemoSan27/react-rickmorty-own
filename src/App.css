@@ -344,7 +344,7 @@ img{
   
 }
 .react-autosuggest__suggestion--highlighted{
-  background-color: #ddd;
+  background-color: var(--thirdBg);
 }
 .sugerencia__id{
   display: none;
