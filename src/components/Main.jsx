@@ -39,7 +39,7 @@ const Main = () => {
   const handleLocation = (e) => {
     let currentId = locationId;
     if(locationId === currentId){
-      setHasError(!hasError);
+      setHasError(true);
     }
     e.preventDefault();
     setLocationId(locationSelected.id);
