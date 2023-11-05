@@ -346,3 +346,6 @@ img{
 .react-autosuggest__suggestion--highlighted{
   background-color: #ddd;
 }
+.sugerencia__id{
+  display: none;
+}

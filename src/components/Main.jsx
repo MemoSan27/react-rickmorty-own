@@ -14,7 +14,7 @@ const Main = () => {
   const [ locationSelected, setLocationSelected ] = useState({})
   const [ locationId, setLocationId ] = useState(getRandom());
   const url = `https://rickandmortyapi.com/api/location/${locationId}`;
-  const [ location, getLocation, isLoading, hasError ] = useFetch(url);
+  const [ location, getLocation, isLoading, hasError, setHasError ] = useFetch(url);
  /*  const url2 = `https://rickandmortyapi.com/api/location?page=7`;
   const [ location2, getLocation2 ] = useFetch(url2); */
   
@@ -37,6 +37,10 @@ const Main = () => {
   const inputLocation = useRef();
 
   const handleLocation = (e) => {
+    let currentId = locationId;
+    if(locationId === currentId){
+      setHasError(!hasError);
+    }
     e.preventDefault();
     setLocationId(locationSelected.id);
     inputLocation.current.value = '';
@@ -70,12 +74,12 @@ const Main = () => {
   }
 
   const getSuggestionValue = (suggestion) => {
-    return `${ suggestion.id } - ${ suggestion.name }`;
+    return `${ suggestion.name }`;
   }
   
   const renderSuggestion = (suggestion) => (
     <div className='sugerencia' onClick={ () => selectLocationName(suggestion) }>
-      { `${ suggestion.id } - ${ suggestion.name }` }
+       <span className='sugerencia__id'> { suggestion.id } </span> <span> { suggestion.name } </span>  
     </div>
   );
 

@@ -23,7 +23,7 @@ const useFetch = (url) => {
         })
     }
 
-    return [ infoApi, getApi, isLoading, hasError ];
+    return [ infoApi, getApi, isLoading, hasError, setHasError ];
 
 }
 
