@@ -18,7 +18,7 @@ const Main = () => {
  /*  const url2 = `https://rickandmortyapi.com/api/location?page=7`;
   const [ location2, getLocation2 ] = useFetch(url2); */
   
-  
+  console.log(locationSelected.id)
 
   useEffect( () => {
     getLocation();
@@ -38,7 +38,7 @@ const Main = () => {
 
   const handleLocation = (e) => {
     e.preventDefault();
-    setLocationId(inputLocation.current.value);
+    setLocationId(locationSelected.id);
     inputLocation.current.value = '';
   }
 
