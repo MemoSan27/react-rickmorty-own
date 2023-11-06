@@ -145,7 +145,7 @@ const Main = () => {
                             />
                           )).slice((page - 1)* perPages, (page - 1)* perPages + perPages) }
                           </div>
-                          :<h2 className='error'> Location <span className='populspan'> ${location?.name} </span>  has not population </h2>
+                          :<h2 className='error'> Location <span className='populspan'> {location?.name} </span>  has not population </h2>
                         }
                     
                       {location.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
