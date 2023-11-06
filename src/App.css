@@ -97,7 +97,7 @@ img{
   background-color: var(--inputBg);
   padding: 1rem 2rem;
   outline: none;
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
 }
 .form__btn{
   width: 25%;
@@ -107,7 +107,7 @@ img{
   color: white;
   text-transform: uppercase;
   padding: 1rem 0;
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
   position: absolute;
   right: 0%;
   top: 0%;
@@ -123,15 +123,15 @@ img{
 }
 .card-location__title{
   color: rgba(240,240,45,0.5);
-  font-size: 2rem;
+  font-size: 3.5rem;
   margin-bottom: 2.5rem;
   letter-spacing: 0.15rem;
   font-weight: 900;
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
 }
 @media ( min-width: 600px ) { 
   .card-location__title{
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
 }
 .card-location__list{
@@ -142,11 +142,11 @@ img{
 .card-location__item{
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 @media ( min-width: 600px ) { 
   .card-location__item{
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 .card-location__description{
@@ -203,7 +203,7 @@ img{
   background-color: var(--secondBg);
   padding: 2rem 0;
   border-radius: 0 0 3rem 3rem; 
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
   color: var(--thirdBg);
 }
 .resident__name{
@@ -211,7 +211,7 @@ img{
 }
 @media ( min-width: 600px ) { 
   .resident__name{
-    font-size: 2.5  rem;
+    font-size: 3rem;
   }
 }
 .resident__info{
@@ -280,7 +280,7 @@ img{
 .back__span{
   font-weight: 400;
   color: rgba(240,240,45,0.5);
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
 }
 .back__tit{
   font-size: 2.8rem;
@@ -309,7 +309,7 @@ img{
   font-weight: 700;
   animation: showError 1s ease-in;
   border: 3px solid rgba(240,240,45,0.9);
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
 }
 @keyframes showError {
   from{
@@ -355,7 +355,7 @@ img{
   background-color: var(--inputBg);
   padding: 1rem 2rem;
   outline: none;
-  font-family: 'Rick and Morty';
+  font-family: var(--mainFont);
   
 }
 .react-autosuggest__suggestion--highlighted{
