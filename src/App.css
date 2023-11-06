@@ -366,11 +366,11 @@ img{
 }
 .getPages{
   margin-bottom: 3rem;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--thirdBg);
 }
 .btn__pages{
-  font-size: 5rem;
+  font-size: 10rem;
   display: inline;
 }
 .btn__pages:hover{
@@ -379,9 +379,9 @@ img{
 .page{
   display: inline;
   position: relative;
-  top: -1rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
+  top: -3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 .error{
   background-size: var(--mainBg);
