@@ -385,7 +385,7 @@ img{
 }
 .error{
   background-size: var(--mainBg);
-  width: 90%;
+  max-width: 90%;
   text-align: center;
 }
 .populspan{
