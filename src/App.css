@@ -158,6 +158,7 @@ img{
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  min-height: 30vh;
 }
 @media ( min-width: 600px ) { 
   .cards-container{
@@ -348,4 +349,23 @@ img{
 }
 .sugerencia__id{
   display: none;
+}
+.getPages{
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--thirdBg);
+}
+.btn__pages{
+  font-size: 5rem;
+  display: inline;
+}
+.btn__pages:hover{
+  cursor: pointer;
+}
+.page{
+  display: inline;
+  position: relative;
+  top: -1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }

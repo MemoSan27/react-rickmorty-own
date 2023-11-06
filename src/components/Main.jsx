@@ -6,6 +6,7 @@ import CardResident from '../components/CardResident';
 import Loading from './Loading';
 import ubicate from '../locations.json';
 import Autosuggest from 'react-autosuggest';
+import Pagination from './Pagination';
 
 const Main = () => {
 
@@ -15,11 +16,10 @@ const Main = () => {
   const [ locationId, setLocationId ] = useState(getRandom());
   const url = `https://rickandmortyapi.com/api/location/${locationId}`;
   const [ location, getLocation, isLoading, hasError, setHasError ] = useFetch(url);
+  const [page, setPage] = useState(1)
  /*  const url2 = `https://rickandmortyapi.com/api/location?page=7`;
   const [ location2, getLocation2 ] = useFetch(url2); */
   
-  console.log(locationSelected.id)
-
   useEffect( () => {
     getLocation();
     /* getLocation2(); */
@@ -32,8 +32,6 @@ const Main = () => {
     },` );
 }  */
   
-  
-
   const inputLocation = useRef();
 
   const handleLocation = (e) => {
@@ -43,6 +41,7 @@ const Main = () => {
     }
     e.preventDefault();
     setLocationId(locationSelected.id);
+    setPage(1);
     inputLocation.current.value = '';
   }
 
@@ -96,7 +95,11 @@ const Main = () => {
     onChange: onChange,
   };
 
-  
+   //===== estados y variables de paginación=====
+   const perPages = 6
+   const quantyPages = Math.ceil(location?.residents?.length / perPages)
+
+   
 
   return (
     <section className='container'>
@@ -130,6 +133,7 @@ const Main = () => {
                       <CardLocation 
                         location={location}
                       />
+                      {location.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
                       <div className='cards-container'>
                         {
                           location?.residents.map((url) => (
@@ -137,12 +141,14 @@ const Main = () => {
                               key={url} 
                               url={url}
                             />
-                          ))
+                          )).slice((page - 1)* perPages, (page - 1)* perPages + perPages)
                         }
                       </div>
+                      {location.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
                     </>
                 ))
           }
+          
       </section>
   )
 }
