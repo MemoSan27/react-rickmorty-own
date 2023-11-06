@@ -133,17 +133,21 @@ const Main = () => {
                       <CardLocation 
                         location={location}
                       />
-                      {location.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
-                      <div className='cards-container'>
+                      {location?.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
                         {
-                          location?.residents.map((url) => (
+                          location?.residents[0]
+                          ?
+                          <div className='cards-container'>{
+                            location?.residents.map((url) => (
                             <CardResident 
                               key={url} 
                               url={url}
                             />
-                          )).slice((page - 1)* perPages, (page - 1)* perPages + perPages)
+                          )).slice((page - 1)* perPages, (page - 1)* perPages + perPages) }
+                          </div>
+                          :<h2 className='error'> Location <span className='populspan'> ${location?.name} </span>  has not population </h2>
                         }
-                      </div>
+                    
                       {location.residents[0] && <Pagination quantyPages={quantyPages} page={page} setPage={setPage}/>}
                     </>
                 ))

@@ -17,6 +17,7 @@
 }
 *{
   box-sizing: border-box;
+  
 }
 html{
   font-family: var(--mainFont);
@@ -25,6 +26,7 @@ html{
 body{
   margin: 0;
   background-color: var(--mainBg);
+  min-height: 100vh;
 }
 input{
   font-family: inherit;
@@ -148,10 +150,22 @@ img{
   }
 }
 .card-location__description{
+  font-size: 2rem;
   font-weight: 700;
 }
+@media ( min-width: 500px ) { 
+  .card-location__description{
+    font-size: 3rem;
+  }
+}
 .card-location__info{
+  font-size: 2rem;
   font-weight: 300;
+}
+@media ( min-width: 500px ) { 
+  .card-location__info{
+    font-size: 3rem;
+  }
 }
 .cards-container{
   width: 90%;
@@ -368,4 +382,12 @@ img{
   top: -1rem;
   margin-left: 4rem;
   margin-right: 4rem;
+}
+.error{
+  background-size: var(--mainBg);
+  width: 90%;
+  text-align: center;
+}
+.populspan{
+  color: mediumvioletred;
 }
