@@ -91,6 +91,7 @@ const Main = () => {
   }
 
   const inputProps = {
+    placeholder: '(Type your location and select it with your mouse to autocomplete)',
     value: value,
     onChange: onChange,
   };
@@ -99,7 +100,7 @@ const Main = () => {
    const perPages = 6
    const quantyPages = Math.ceil(location?.residents?.length / perPages)
 
-   
+   console.log(locationSelected)
 
   return (
     <section className='container'>

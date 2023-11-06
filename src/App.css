@@ -387,6 +387,7 @@ img{
   background-size: var(--mainBg);
   max-width: 90%;
   text-align: center;
+  margin-bottom: 3rem;
 }
 .populspan{
   color: mediumvioletred;
